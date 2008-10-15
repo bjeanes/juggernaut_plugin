@@ -74,7 +74,7 @@ module Juggernaut
     end
     
     def client_in_channel?(client_id, channel)
-      !show_clients_for_channels([channel]).find {|c| c['client_id'] == client_id }.nil?
+      !show_clients_for_channels([channel]).find {|c| c['id'] == client_id }.nil?
     end
     
     def show_clients
