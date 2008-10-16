@@ -77,6 +77,15 @@ module Juggernaut
       !show_clients_for_channels([channel]).find {|c| c['id'] == client_id }.nil?
     end
     
+    def show_channels_for_client(client_id)
+      fc = {
+        :command   => :query,
+        :type      => :show_channels_for_client,
+        :client_id => client_id
+      }
+      send_data(fc, true)
+    end
+    
     def show_clients
       fc = {
         :command  => :query,
